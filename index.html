@@ -44,7 +44,12 @@
         </div>
         <div class="main-section">
           <div class="image-container">
-            <img src="./assets/main-image.png" alt="main-image" />
+            <div id="skeleton-loader"></div>
+            <img
+              id="large-image"
+              src="./assets/main-image.png"
+              alt="main-image"
+            />
           </div>
         </div>
       </div>
@@ -74,7 +79,19 @@
     </section>
 
     <footer>
-      <p>&copy; 2024 Your Company. All rights reserved.</p>
+      <p>&copy; 2024 Sameera Dias. All rights reserved.</p>
     </footer>
+
+    <script>
+      const largeImage = document.getElementById("large-image");
+      const skeletonLoader = document.getElementById("skeleton-loader");
+
+      largeImage.onload = function () {
+        setTimeout(() => {
+          skeletonLoader.style.display = "none";
+          largeImage.style.display = "block";
+        }, 2000);
+      };
+    </script>
   </body>
 </html>
